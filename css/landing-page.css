@@ -118,7 +118,7 @@ h6 {
 }
 
 .testimonial {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5em;
     border: 1px solid #ddd;
@@ -126,6 +126,7 @@ h6 {
     background: #fff;
     text-align: center;
     padding: 20px 20px;
+    margin-bottom: 20px;
 }
 .testimonial:before {
     content: "”";
@@ -138,9 +139,11 @@ h6 {
 }
 
 .banner {
-    padding: 100px 0;
+    padding: 50px 0;
     color: #f8f8f8;
     background: #147;
+    font-size: 18px;
+    font-weight: 100;
     /*background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
         url(../img/banner-bg.jpg) no-repeat center center;
     background-size: cover;*/
