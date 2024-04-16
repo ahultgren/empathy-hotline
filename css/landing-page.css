@@ -138,54 +138,63 @@ h6 {
     font-family: serif;
 }
 
-.banner {
+.contact {
     padding: 50px 0;
     color: #f8f8f8;
     background: #147;
     font-size: 18px;
     font-weight: 100;
-    /*background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url(../img/banner-bg.jpg) no-repeat center center;
-    background-size: cover;*/
 }
 
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
-
-.banner ul {
+.contact ul {
     margin-bottom: 0;
 }
 
-.banner-social-buttons {
+.contact-social-buttons {
     float: right;
     margin-top: 0;
 }
 
 @media(max-width:1199px) {
-    ul.banner-social-buttons {
+    ul.contact-social-buttons {
         float: left;
         margin-top: 15px;
     }
 }
 
 @media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
 
-    ul.banner-social-buttons > li {
+    ul.contact-social-buttons > li {
         display: block;
         margin-bottom: 20px;
         padding: 0;
     }
 
-    ul.banner-social-buttons > li:last-child {
+    ul.contact-social-buttons > li:last-child {
         margin-bottom: 0;
+    }
+}
+
+.quote {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../img/quote-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+.quote p {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 2.5em;
+    font-weight: 500;
+    text-align: center;
+}
+@media(max-width:767px) {
+    .quote {
+        padding: 50px 0;
+    }
+    .quote p {
+        font-size: 2em;
     }
 }
 
