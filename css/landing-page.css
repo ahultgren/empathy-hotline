@@ -105,10 +105,21 @@ h6 {
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
 }
+@media(max-width:767px) {
+    .content-section-a,
+    .content-section-b {
+        padding: 25px 0 10px;
+    }
+}
 
 .section-heading {
     margin-bottom: 30px;
     margin-top: 0;
+}
+@media(max-width:767px) {
+    .section-heading {
+        margin-bottom: 10px;
+    }
 }
 
 .section-heading-spacer {
@@ -145,56 +156,43 @@ h6 {
     font-size: 18px;
     font-weight: 100;
 }
-
-.contact ul {
-    margin-bottom: 0;
-}
-
-.contact-social-buttons {
+.contact a {
     float: right;
-    margin-top: 0;
 }
-
-@media(max-width:1199px) {
-    ul.contact-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
-
 @media(max-width:767px) {
-
-    ul.contact-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
+    .contact {
+        padding: 20px 0;
     }
-
-    ul.contact-social-buttons > li:last-child {
-        margin-bottom: 0;
+    .contact a {
+        float: none;
     }
 }
+
 
 .quote {
-    padding: 100px 0;
+    padding: 50px 0;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    /* padding: 100px 0;
     color: #f8f8f8;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(../img/quote-bg.jpg) no-repeat center center;
-    background-size: cover;
+    background-size: cover; */
 }
 .quote p {
     margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    /* text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 2.5em;
     font-weight: 500;
-    text-align: center;
+    text-align: center; */
 }
 @media(max-width:767px) {
     .quote {
-        padding: 50px 0;
+        padding: 20px 0;
     }
     .quote p {
-        font-size: 2em;
+        /* font-size: 2em; */
     }
 }
 
