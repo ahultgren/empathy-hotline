@@ -204,3 +204,10 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+.btn-donate i {
+    color: #d00;
+}
+.btn-call {
+    color: #25d366;
+}
