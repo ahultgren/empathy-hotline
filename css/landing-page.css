@@ -87,6 +87,23 @@ h6 {
     }
 }
 
+
+.btn-call {
+    color: #25d366;
+}
+.btn-call .call-now {
+    display: none;
+}
+.btn-call.available-now .call-now {
+    display: inline;
+}
+.btn-call .call-later {
+    display: inline;
+}
+.btn-call.available-now .call-later {
+    display: none;
+}
+
 .network-name {
     text-transform: uppercase;
     font-size: 14px;
@@ -207,7 +224,4 @@ p.copyright {
 
 .btn-donate i {
     color: #d00;
-}
-.btn-call {
-    color: #25d366;
 }

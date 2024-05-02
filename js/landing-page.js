@@ -29,3 +29,34 @@ $('div.modal').on('show.bs.modal', function() {
 		}
 	}
 });
+
+const availability = [
+    ['2024-05-02', '17:00', '19:00'],
+    ['2024-05-03', '10:00', '12:00'],
+];
+
+function isOpenNow () {
+    const now = dayjs();
+
+    for(let i = 0; i < availability.length; i++) {
+        const [day, start, end] = availability[i];
+        const startTime = dayjs(`${day}T${start}+0200`);
+        const endTime = dayjs(`${day}T${end}+0200`);
+        if(now.isBetween(startTime, endTime)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function showAvailability () {
+    if( isOpenNow()) {
+        document.querySelector('.btn-call').classList.add('available-now');
+    } else {
+        document.querySelector('.btn-call').classList.remove('available-now');
+    }
+}
+
+showAvailability();
+setInterval(showAvailability, 60000);
