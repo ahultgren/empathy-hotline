@@ -30,6 +30,8 @@ $('div.modal').on('show.bs.modal', function() {
 	}
 });
 
+dayjs.extend(dayjs_plugin_isBetween);
+
 const availability = [
     ['2024-05-02', '17:00', '19:00'],
     ['2024-05-03', '10:00', '12:00'],
