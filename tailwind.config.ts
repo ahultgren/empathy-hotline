@@ -9,6 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {},
+      backgroundColor: {
+        gray: "#f8f8f8",
+        darkgray: "#e7e7e7",
+      },
+      textColor: {
+        gray: "#777",
+        grayactive: "#555",
+        grayhover: "#333",
+      },
       dropShadow: {
         lg: "2px 2px 3px rgba(0,0,0,0.6)",
       },
