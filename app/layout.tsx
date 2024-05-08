@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import Nav from "./nav";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({ subsets: ["latin"], weight: ["100", "400", "700"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         <Nav></Nav>
         {children}
       </body>

@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <nav
-      className="fixed top-0 z-40 w-full border-b bg-gray font-medium text-gray"
+      className="fixed top-0 z-40 w-full border-b bg-gray font-bold text-gray"
       role="navigation"
     >
       <div className="mx-auto max-w-5xl sm:flex">
