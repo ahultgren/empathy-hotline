@@ -20,6 +20,10 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+p {
+  margin-bottom: 1em;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
