@@ -6,7 +6,11 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
-const lato = Lato({ subsets: ["latin"], weight: ["100", "400", "700"] });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "400", "700"],
+  style: ["normal", "italic"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",

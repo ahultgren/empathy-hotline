@@ -10,5 +10,14 @@
 
   .box {
     flex: 1;
+
+    &:only-child {
+      max-width: 66.666%;
+    }
   }
+}
+
+.box:only-child {
+  margin: auto;
+  max-width: 83.333%;
 }

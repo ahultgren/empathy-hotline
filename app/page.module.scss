@@ -1,6 +1,21 @@
 .section {
   background-color: #f8f8f8;
-  padding: 50px 10px 0;
+  padding: 50px 15px 0;
+}
+
+.sectionLight {
+  background-color: #fff;
+}
+
+.sectionQuote {
+  padding-bottom: 50px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+
+  p {
+    margin: 0;
+  }
 }
 
 .heading {

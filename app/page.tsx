@@ -10,6 +10,24 @@ export default function Home() {
   return (
     <section>
       <Intro></Intro>
+      <div
+        className={[
+          styles.section,
+          styles.sectionLight,
+          styles.sectionQuote,
+        ].join(" ")}
+      >
+        <Row>
+          <Box>
+            <p>
+              “When someone really hears you without passing judgment on you,
+              without trying to take responsibility for you, without trying to
+              mold you, it feels damn good.”
+              <br />— Carl Rogers
+            </p>
+          </Box>
+        </Row>
+      </div>
       <div className={styles.section} id="empathy">
         <Row>
           <Box>
