@@ -3,14 +3,19 @@ import Intro from "./components/intro";
 import { Row, Box } from "./components/grid";
 import styles from "./page.module.scss";
 import Button from "./components/button";
-import { faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBullhorn,
+  faEnvelope,
+  faHandHoldingHeart,
+} from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import Testimonial from "./components/testimonial";
 
 export default function Home() {
   return (
-    <section>
+    <main>
       <Intro></Intro>
-      <div
+      <section
         className={[
           styles.section,
           styles.sectionLight,
@@ -27,8 +32,8 @@ export default function Home() {
             </p>
           </Box>
         </Row>
-      </div>
-      <div className={styles.section} id="empathy">
+      </section>
+      <section className={styles.section} id="empathy">
         <Row>
           <Box>
             <h2 className={styles.heading}>Support when you need it</h2>
@@ -65,8 +70,8 @@ export default function Home() {
             ></Image>
           </Box>
         </Row>
-      </div>
-      <div className={styles.section} id="how">
+      </section>
+      <section className={styles.section} id="how">
         <Row>
           <Box>
             <h2 className={styles.heading}>How does it work?</h2>
@@ -104,8 +109,8 @@ export default function Home() {
             ></Image>
           </Box>
         </Row>
-      </div>
-      <div className={styles.section} id="who">
+      </section>
+      <section className={styles.section} id="who">
         <Row>
           <Box>
             <h2 className={styles.heading}>Who am I?</h2>
@@ -141,11 +146,11 @@ export default function Home() {
             </div>
           </Box>
         </Row>
-      </div>
+      </section>
       <div className={styles.section} id="support">
         <Row>
           <Box>
-            <h2 className={styles.heading}>Support when you need it</h2>
+            <h2 className={styles.heading}>How you can support me</h2>
             <div className={styles.lead}>
               <p>
                 At the moment I'm running this project entirely out of my own
@@ -183,6 +188,73 @@ export default function Home() {
           </Box>
         </Row>
       </div>
-    </section>
+      <section className={styles.section} id="testimonials">
+        <Row>
+          <h2 className={styles.heading}>What others have to say</h2>
+        </Row>
+        <Row>
+          <Box>
+            <Testimonial by="Nadine">
+              I found myself very stuck in my emotions and I couldn’t really
+              tell what was happening – I just felt so overwhelmed and didn’t
+              know what to do. In Andreas I found someone who was able to hold
+              space, ask the right questions for me to actually move through my
+              emotions and become aware of what was really going on beneath the
+              surface. This session was so helpful to move and release my
+              emotions and getting clear what was going on inside of me – I felt
+              so much better afterwards.
+            </Testimonial>
+          </Box>
+          <Box>
+            <Testimonial by="Joris">
+              I had a fight with my girlfriend, on the same topic as so many
+              times before. Stuck. Andreas supported both of us, through a
+              combination of individual conversations with him and talks
+              together. He is empathic, clear and warm, and helped us to
+              disentangle emotions, facts and narratives. When we got into
+              fighting territory, he slowed us back down, helping us to find the
+              underlying pain and express that, instead of accusing each other.
+              Recommended!
+            </Testimonial>
+          </Box>
+          <Box>
+            <Testimonial by="Elia">
+              In a way, I think one of the most supporting things that I found
+              from you was just hearing whatever came to your mind, actually
+              bringing yourself in as you and not just as an empty ‘mediator’.
+              Bringing your perception and honesty.
+            </Testimonial>
+          </Box>
+        </Row>
+      </section>
+      <section
+        className={[styles.section, styles.contact].join(" ")}
+        id="contact"
+      >
+        <Row>
+          <Box>
+            <p>
+              Do you want to go deeper than what’s possible in a free 20 minutes
+              call? In addition to empathic listening I’m also available for
+              coaching, relationship counseling, conflict mediation,
+              communication workshops, and group decision facilitation. Contact
+              me to schedule a free get-to-know-each-other call, or sign-up for
+              my newsletter to get updated when I have more offers.
+            </p>
+          </Box>
+          <Box>
+            <Button href="me@andreashultgren.se" icon={faEnvelope}>
+              me@andreashultgren.se
+            </Button>
+            <Button
+              href="https://forms.gle/UYpPw8D6nWTbdPMc8"
+              icon={faBullhorn}
+            >
+              Subscribe to updates
+            </Button>
+          </Box>
+        </Row>
+      </section>
+    </main>
   );
 }

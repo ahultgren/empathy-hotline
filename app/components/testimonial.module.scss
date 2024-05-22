@@ -1,0 +1,21 @@
+.testimonial {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+
+  &:before {
+    content: "”";
+    font-size: 10em;
+    line-height: 1;
+    height: 0.55em;
+    display: block;
+    clear: both;
+    font-family: serif;
+  }
+}
