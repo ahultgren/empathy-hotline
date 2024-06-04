@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import Testimonial from "./components/testimonial";
+import Calendar from "./components/calendar";
 
 export default function Home() {
   return (
@@ -100,13 +101,7 @@ export default function Home() {
             </div>
           </Box>
           <Box>
-            <Image
-              src="/images/calendar.png"
-              className="img-responsive"
-              alt="My schedule"
-              width="500"
-              height="500"
-            ></Image>
+            <Calendar></Calendar>
           </Box>
         </Row>
       </section>

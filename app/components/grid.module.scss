@@ -10,6 +10,7 @@
 
   .box {
     flex: 1;
+    min-width: 0;
 
     &:only-child {
       max-width: 66.666%;
