@@ -11,7 +11,6 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack",
     {
       name: "@storybook/addon-styling-webpack",
 
@@ -21,11 +20,15 @@ const config: StorybookConfig = {
             test: /\.css$/,
             sideEffects: true,
             use: [
-              require.resolve("style-loader"),
+              "style-loader",
               {
-                loader: require.resolve("css-loader"),
+                loader: "css-loader",
                 options: {
                   importLoaders: 1,
+                  modules: {
+                    auto: true,
+                    localIdentName: "[name]__[local]--[hash:base64:5]",
+                  },
                 },
               },
               {
@@ -36,6 +39,17 @@ const config: StorybookConfig = {
               },
             ],
           },
+          // {
+          //   test: /\.s[ac]ss$/i,
+          //   use: [
+          //     "style-loader",
+          //     "css-loader",
+          //     {
+          //       loader: "sass-loader",
+          //       options: { implementation: require.resolve("sass") },
+          //     },
+          //   ],
+          // },
         ],
       },
     },
@@ -45,5 +59,33 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["../public"],
+  webpackFinal: async (config, { configType }) => {
+    config.module.rules.push({
+      test: /\.s[ac]ss$/i,
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            importLoaders: 2,
+            modules: {
+              auto: true,
+              localIdentName: "[name]__[local]--[hash:base64:5]",
+            },
+          },
+        },
+        {
+          loader: "sass-loader",
+          options: {
+            sourceMap: true,
+            sassOptions: {
+              implementation: "sass",
+            },
+          },
+        },
+      ],
+    });
+    return config;
+  },
 };
 export default config;
