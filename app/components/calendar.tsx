@@ -1,10 +1,9 @@
 "use client";
 
 import { ReactElement, useEffect, useState } from "react";
-import styles from "./calendar.module.scss";
-import { WeekView } from "react-weekview";
+import { default as WeekView, Event } from "./weekview";
 
-interface Event {
+type GCalEvent = {
   summary: string;
   id: string;
   start: {
@@ -13,11 +12,22 @@ interface Event {
   end: {
     dateTime: string;
   };
+};
+
+function formatEvents(events: GCalEvent[]): Event[] {
+  return events.map(({ id, summary, start, end }) => {
+    return {
+      id,
+      title: summary,
+      startDate: new Date(start.dateTime),
+      endDate: new Date(end.dateTime),
+    };
+  });
 }
 
 export default function Calendar({}: {}): ReactElement {
   const [loaded, setLoaded] = useState(false);
-  const [events, setEvents] = useState([]);
+  const [events, setEvents]: [Event[], any] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -39,32 +49,23 @@ export default function Calendar({}: {}): ReactElement {
 
       // TODO handle error state
       setLoaded(true);
-      setEvents(data.items || []);
+      setEvents(formatEvents(data.items || []));
+      return data.items;
     }
 
     fetchData();
   }, []);
 
-  return loaded ? (
-    <div>
-      <WeekView />
-      {events.map((event: Event) => (
-        <Event key={event.id} {...event}></Event>
-      ))}
-    </div>
-  ) : (
-    <Loading></Loading>
-  );
+  // TODO No-planned-sessions view
+  console.log(events);
+
+  if (!loaded) {
+    return <Loading />;
+  }
+
+  return <WeekView events={events}></WeekView>;
 }
 
 function Loading() {
   return <div>Loading</div>;
-}
-
-function Event({ id, summary, start }: Event) {
-  return (
-    <div key={id}>
-      {summary} {start.dateTime}
-    </div>
-  );
 }

@@ -1,0 +1,52 @@
+.grid {
+  --header-row-height: 30px;
+  --cell-row-height: 30px;
+  --line-color: #98c996;
+
+  background: #e8fff1;
+  display: grid;
+  grid-template-columns: 45px repeat(7, minmax(0, 1fr));
+  grid-template-rows: var(--header-row-height);
+  grid-auto-rows: var(--cell-row-height);
+  position: relative;
+  padding: 1%;
+
+  color: #555;
+  font-size: 12px;
+}
+
+.day {
+  border-left: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
+  padding: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: var(--header-row-height);
+}
+
+.hour {
+  padding: 0 10px 0 5px;
+  text-align: right;
+  line-height: 0;
+  position: relative;
+
+  &:after {
+    content: "–";
+    position: absolute;
+    right: -1px;
+    top: 0px;
+    display: block;
+  }
+}
+
+.cell {
+  border-left: 1px solid var(--line-color);
+}
+
+.event {
+  background-color: #3ba13c;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 0 5% 0 0;
+  color: #fff;
+}
